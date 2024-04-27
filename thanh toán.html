@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Thanh Toán</title>
+    <style>
+        /* form container */
+        .form-container {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color:antiquewhite ;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        /* Style cho form */
+        form {
+            width: 100%;
+        }
+        /*  input và button */
+        input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            background-color: #101110;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        /* Style  thông báo thành công */
+        .success-message {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        /* Style  thông báo tổng tiền thanh toán */
+        .payment-amount {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <form id="payment-form" action="process_payment.php" method="post">
+        <h2>Thông Tin Thanh Toán</h2>
+        <label for="name">Họ và tên của bạn:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Số điện thoại:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="address">Địa chỉ nhận hàng:</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+
+        <label for="product">Tên sản phẩm:</label>
+        <input type="text" id="product" name="product" required>
+
+        <label for="quantity">Số lượng sản phẩm :</label>
+        <input type="number" id="quantity" name="quantity" min="1" required onchange="calculateTotal()">
+
+        <label for="price">Giá sản phẩm (VNĐ):</label>
+        <input type="number" id="price" name="price" min="0" required onchange="calculateTotal()">
+
+        <label for="payment_method">Phương thức thanh toán:</label>
+        <select id="payment_method" name="payment_method">
+            <option value="thanhtoankhinhanhang">Thanh toán khi nhận hàng</option>
+            <option value="momo">MoMo</option>
+            <option value="zalopay">Zalo pay</option>
+            <option value="VNPAY">VNPAY</option>
+        </select>
+
+        <input type="submit" value="Thanh Toán">
+    </form>
+
+    <div class="success-message" id="success-message">Sản phẩm đã được thanh toán thành công!</div>
+
+    <div class="payment-amount" id="payment-amount"></div>
+</div>
+
+<script>
+    function calculateTotal() {
+        var quantity = document.getElementById("quantity").value;
+        var price = document.getElementById("price").value;
+        var totalPrice = quantity * price;
+        document.getElementById("total-price").innerText = totalPrice + " VNĐ";
+    }
+
+    document.getElementById("payment-form").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+        document.getElementById("success-message").style.display = "block";
+
+        var quantity = document.getElementById("quantity").value;
+        var price = document.getElementById("price").value;
+        var totalPrice = quantity * price;
+
+        var paymentAmountElement = document.getElementById("payment-amount");
+        paymentAmountElement.innerText = "Tổng số tiền thanh toán là : " + totalPrice + " VNĐ";
+        paymentAmountElement.style.display = "block";
+
+        document.getElementById("payment-form").reset();
+    });
+</script>
+
+</body>
+</html>

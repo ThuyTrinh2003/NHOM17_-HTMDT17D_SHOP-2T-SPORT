@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đăng ký</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .signup-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 90%;
+    margin: auto;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  button {
+    width: calc(100% - 22px);
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .success-message {
+    display: none;
+    color: #4caf50;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <form id="signup-form" class="signup-form">
+    <h2>ĐĂNG KÍ </h2>
+    <input type="text" id="name" placeholder="Tên của bạn" required>
+    <input type="email" id="email" placeholder="Email của bạn" required>
+    <input type="password" id="password" placeholder="Mật khẩu" required>
+    <input type="password" id="confirm-password" placeholder="Nhập lại mật khẩu" required>
+    <button type="submit">Đăng ký</button>
+  </form>
+  <div id="success-message" class="success-message">Bạn đã đăng kí thành công!</div>
+</div>
+
+<script>
+  document.getElementById("signup-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirm-password").value;
+    
+    if(password !== confirmPassword) {
+      alert("Mật khẩu của bạn không khớp!");
+      return;
+    }
+    
+    // Gửi dữ liệu đăng ký đến máy chủ ( chỉ hiển thị thông báo đăng ký thành công)
+    document.getElementById("signup-form").style.display = "none";
+    document.getElementById("success-message").style.display = "block";
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+body {
+    padding:0px;
+    margin-top: 60px ;
+    margin-left: 50px ;
+    font-family: "poppins";
+    width:100%;
+    
+
+}
+header {
+    
+    color: black;
+    padding: 35px 35px;
+    text-align: center;
+}
+#menu
+{
+    margin-top: 40px;
+    list-style: none;
+    display: flex;
+   
+}
+#menu .item
+{
+    margin: 20px 45px;
+
+}
+#menu .item a
+{
+    color:rgb(8, 9, 9);
+    text-decoration: none;
+    background-color:aliceblue;
+    font-size: 21px;
+    
+
+}
+
+#actions
+{
+    display: flex;
+
+}
+#actions .item
+{
+
+margin-left: 25px;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: GREY;
+    color: rgb(250, 248, 248);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.button-link:hover {
+    background-color: #179908;
+}
+#footer
+{
+    font-size: 18px ;
+    width:100%;
+    background:rgba(50, 50, 50, 0.79);
+    height: 380px;
+    margin-top: 90px;
+    padding-top: 60px;
+    display: flex;
+    justify-content: space-around;
+
+}
+#footer .box
+{
+    line-height: 1.5;
+    width: 250px;
+    color: white;
+
+}
+#footer .box .quick-menu
+{
+    margin-top: 21px;
+}
+
+#footer .box .quick-menu .item
+{
+    margin-bottom: 12px;
+
+}
+#footer .box .quick-menu .item a{
+    color:white;
+    text-decoration: none;
+}
+
+
+
+.product {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.buy-btn {
+    background-color: grey;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+.subscribe-container {
+    width: 270px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    
+}
+input[type="email"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+input[type="submit"] {
+    background-color:red ;
+    color: rgb(241, 236, 236);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+h3
+{
+    color:red ;
+}

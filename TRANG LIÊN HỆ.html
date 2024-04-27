@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIÊN HỆ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<style>
+    
+    .container {
+
+        background-image:url(data:image/jpeg;base64,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);
+        width: 100%;
+    
+    }
+    
+    .container h1 {
+        font-size: 30px;
+        color: blue;
+        text-transform: uppercase;
+        font-weight: 300;
+    }
+    
+    .container .form {
+        display: flex;
+        font-size: 18px ;
+    }
+    
+    .container .form .left {
+        width: 30%;
+        margin-left: 40px ;
+    }
+    
+    .container .form .left h2:first-child {
+        font-weight: 300;
+    }
+    
+    .container .form .left p {
+        color: gray;
+    }
+    
+    .container .form .right {
+        width: 70%;
+        margin-right: 260px ;
+        
+    }
+    
+    .container .form .right p:first-child {
+        font-size: 20px;
+        
+        color: blue;
+    }
+    
+    .container .form .right form div{
+        margin: 18px 0;
+        
+    }
+    
+    input, textarea {
+        
+        line-height: 2;
+        width: 100%;
+        
+    }
+    
+    button {
+        border: none;
+        border-radius: 5px;
+        color: white;
+        background-color: rgb(52, 4, 142);
+        padding: 10px 20px;
+    }
+    
+    #footer
+{
+    width:100%;
+    background:rgba(50, 50, 50, 0.79);
+    height: 350px;
+    margin-top: 108px;
+    margin-left: 10px;
+    font-size: 18px ;
+    padding-top: 60px;
+    display: flex;
+    justify-content: space-around;
+
+}
+h2{
+    color:red ;
+}
+#footer .box
+{
+    width: 250px;
+    color: white;
+
+}
+#footer .box .quick-menu
+{
+    margin-top: 21px;
+}
+
+#footer .box .quick-menu .item
+{
+    margin-bottom: 12px;
+
+}
+#footer .box .quick-menu .item a{
+    color:white;
+    text-decoration: none;
+}
+
+
+.subscribe-container {
+    width: 270px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    
+}
+input[type="email"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+input[type="submit"] {
+    background-color:red ;
+    color: rgb(241, 236, 236);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+    </style>
+<body>
+    <div class="container">
+        <h1>Liên hệ</h1>
+        <section class="form">
+                <div class="left">
+                    <h2>Thông tin </h2>
+                    <p>
+                        <i class="fa fa-map-marker-alt"></i>
+                        12 Nguyễn Văn Bảo ,Phường 4,Gò Vấp-TP.HCM
+                    </p>
+                    <p>
+                        <i class="fa fa-envelope"></i>
+                        info@shop2Tsport.com
+                    </p>
+                    <p>
+                        <i class="fa fa-phone"></i>
+                        0123456789
+                    </p>
+                </div>
+                <div class="right">
+                    <p>Hãy liên lạc với SHOP 2T SPORT bất cứ khi nào bạn cần!!!</p>
+                    <form action="POST">
+                        <div>
+                            <input type="text" name="name" id="name" placeholder="Họ và tên">
+                        </div>
+                        <div>
+                            <input type="email" name="email" id="email" placeholder="Địa chỉ email">
+                        </div>
+                        <div>
+                            <textarea name="content" id="content" cols="100" rows="15" placeholder="Nhập nội dung bạn muốn gửi"></textarea>
+                        </div>
+                        <div>
+                            <button onclick="sendMessage()">GỬI
+                            
+                                <i class="fa fa-check"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+        </section>
+    </div>
+
+    <script>
+        function sendMessage() {
+          alert("Đã gửi thông tin của bạn THÀNH CÔNG!");
+        }
+      </script>
+
+
+
+
+
+
+<script>
+    function subscribe() {
+        var emailInput = document.getElementById('email').value;
+        
+        alert("Bạn đã đăng ký nhận khuyến mãi qua email THÀNH CÔNG " + emailInput);
+    }
+</script>
+
+</div>
+
+
+
+<div id="footer">
+
+
+    <div class="box">
+        <h2>DỊCH VỤ</h2>
+        <p>Chính sách khách hàng thân thiết </p>
+        <p>Chính sách bảo mật thông tin</p>
+        <P>Chính sách đổi trả</P>
+        <p>Chính sách bảo hành </p>
+        <p>Chính sách kiểm hàng </p>
+        <img width="30" src="C:\Users\ngocl\Pictures\download (1).png"/>
+            <img width="30" src="C:\Users\ngocl\Pictures\download (3).png"/>
+            <img width="30" src="C:\Users\ngocl\Pictures\download (2).png"/>
+    
+
+    
+    </div>
+  
+    <div class="box">
+        <h2>THÔNG TIN</h2>
+        <p>Trụ sở chính:12 Nguyễn Văn Bảo ,Phường 4,Gò Vấp-TP.HCM</p>
+        <P>Hotline:0123456789</P>
+        <p>Email:info@shop2Tsport.com</p><br>
+            <img width="30" src="C:\Users\ngocl\Pictures\tải xuống.png"/>
+            <img width="30" src="C:\Users\ngocl\Pictures\tải xuống (1).jpg"/>
+            <img width="30" src="C:\Users\ngocl\Pictures\tải xuống.jpg"/>
+            <img width="30" src="C:\Users\ngocl\Pictures\tải xuống (1).png"/>
+
+    </div>
+  
+  
+  <div class="box">
+  
+  <div class="subscribe-container">
+    <label for="email">Nhập email của bạn tại đây:</label><br>
+    <input type="email" id="email" name="email" placeholder=" Hãy nhập email" required><br>
+    <input type="submit" value="Đăng ký" onclick="subscribe()">
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+    <script src="./main.js"></script>
+</body>
+<script>
+let namee = document.getElementById('name');
+let email = document.getElementById('email');
+let title = document.getElementById('title');
+let content = document.getElementById('content');
+let button = document.getElementById('submit');
+
+button.addEventListener('click', () => {
+    alert(`Ho va ten: ${namee.value}\nEmail: ${email.value}\nTieu de: ${title.value}\nNoi dung gop y: ${content.value}`);
+});
+</script>
+
+<html>

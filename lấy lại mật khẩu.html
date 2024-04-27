@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lấy Lại Mật Khẩu</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+    }
+
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .container h2 {
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .form-group input[type="email"],
+    .form-group input[type="password"] {
+        width: calc(100% - 22px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .form-group input[type="submit"] {
+        width: 100%;
+        background-color: #5741ce;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .form-group input[type="submit"]:hover {
+        background-color: #2913d0;
+    }
+
+    .message {
+        display: none;
+        padding: 15px;
+        margin-top: 20px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .success {
+        background-color: #dff0d8;
+        color: #120ee2;
+        border: 1px solid #d0e9c6;
+    }
+
+    .error {
+        background-color: #f2dede;
+        color: #a94442;
+        border: 1px solid #ebccd1;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Bạn muốn lấy lại mật khẩu?</h2>
+    <form id="passwordResetForm" action="#" method="post">
+        <div class="form-group">
+            <label for="email">Nhập địa chỉ email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Gửi yêu cầu">
+        </div>
+    </form>
+
+    <div id="successMessage" class="message success">
+        Mật khẩu mới đã được gửi qua email của bạn !
+    </div>
+
+    <div id="errorMessage" class="message error">
+        Địa chỉ email không hợp lệ. Vui lòng kiểm tra lại!
+    </div>
+</div>
+
+<script>
+    document.getElementById("passwordResetForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var email = document.getElementById("email").value;
+        // Kiểm tra email ở đây
+        if (isValidEmail(email)) {
+            // Hiển thị thông báo thành công
+            document.getElementById("successMessage").style.display = "block";
+            // Ẩn thông báo lỗi nếu có
+            document.getElementById("errorMessage").style.display = "none";
+            // Đặt thời gian tự động ẩn thông báo sau 3 giây
+            setTimeout(function(){
+                document.getElementById("successMessage").style.display = "none";
+            }, 3000);
+        } else {
+            // Hiển thị thông báo lỗi
+            document.getElementById("errorMessage").style.display = "block";
+            // Ẩn thông báo thành công nếu có
+            document.getElementById("successMessage").style.display = "none";
+        }
+    });
+
+    function isValidEmail(email) {
+       
+        return /\S+@\S+\.\S+/.test(email);
+    }
+</script>
+
+</body>
+</html>
